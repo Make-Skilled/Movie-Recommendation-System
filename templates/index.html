@@ -30,15 +30,34 @@
         .animate-spin-slow-reverse {
             animation: spin-slow-reverse 15s linear infinite;
         }
+        .gradient-bg {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
+        }
+        .hero-gradient {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        .hero-gradient::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 50% 50%, rgba(56, 189, 248, 0.15), transparent 70%);
+            pointer-events: none;
+        }
         .movie-card {
             transition: all 0.3s ease;
-            background: linear-gradient(145deg, #2d3748, #1a202c);
+            background: linear-gradient(145deg, #1e293b, #0f172a);
             border: 1px solid rgba(255, 255, 255, 0.1);
         }
         .movie-card:hover {
             transform: translateY(-5px);
             box-shadow: 0 10px 20px rgba(0,0,0,0.3);
-            border-color: rgba(59, 130, 246, 0.5);
+            border-color: rgba(56, 189, 248, 0.5);
+            background: linear-gradient(145deg, #0284c7, #0369a1);
         }
         .movie-card-small {
             transition: all 0.3s ease;
@@ -48,11 +67,190 @@
             transform: translateY(-5px) rotate(0deg) !important;
             box-shadow: 0 10px 20px rgba(0,0,0,0.3);
         }
-        .gradient-bg {
-            background: linear-gradient(135deg, #1a1a1a 0%, #2d3748 100%);
+        .feature-card {
+            background: linear-gradient(145deg, #1e293b, #0f172a);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            position: relative;
+            overflow: hidden;
         }
-        .hero-gradient {
-            background: linear-gradient(135deg, #4a5568 0%, #2d3748 50%, #1a202c 100%);
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(56, 189, 248, 0.1), transparent);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        .feature-card:hover::before {
+            opacity: 1;
+        }
+        .feature-card:hover {
+            border-color: rgba(56, 189, 248, 0.5);
+            transform: translateY(-5px);
+            background: linear-gradient(145deg, #0284c7, #0369a1);
+        }
+        .section-bg {
+            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        .section-bg::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 0% 0%, rgba(56, 189, 248, 0.1), transparent 50%);
+            pointer-events: none;
+        }
+        .glow {
+            box-shadow: 0 0 15px rgba(56, 189, 248, 0.3);
+        }
+        .text-gradient {
+            background: linear-gradient(90deg, #38bdf8, #0284c7, #0369a1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-size: 200% auto;
+            animation: textGradient 3s linear infinite;
+        }
+        @keyframes textGradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        .btn-primary {
+            background: linear-gradient(135deg, #38bdf8, #0284c7);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        .btn-primary::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: 0.5s;
+        }
+        .btn-primary:hover::before {
+            left: 100%;
+        }
+        .btn-primary:hover {
+            background: linear-gradient(135deg, #0284c7, #0369a1);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(56, 189, 248, 0.3);
+        }
+        .movie-reel {
+            background: linear-gradient(135deg, #38bdf8, #0284c7);
+            box-shadow: 0 0 30px rgba(56, 189, 248, 0.3);
+            border-radius: 50%;
+            position: relative;
+            overflow: hidden;
+        }
+        .movie-reel::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle at center, rgba(255, 255, 255, 0.1), transparent 70%);
+            animation: rotate 10s linear infinite;
+        }
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        .movie-card-small {
+            transition: all 0.5s ease;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+        .movie-card-small::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(56, 189, 248, 0.3), rgba(2, 132, 199, 0.3));
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        .movie-card-small:hover::before {
+            opacity: 1;
+        }
+        .movie-card-small .bg-gradient-to-br {
+            background: linear-gradient(135deg, #38bdf8, #0284c7);
+            position: relative;
+            overflow: hidden;
+        }
+        .movie-card-small .bg-gradient-to-br::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), transparent);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        .movie-card-small:hover .bg-gradient-to-br::before {
+            opacity: 1;
+        }
+        .movie-card-small .icon-wrapper {
+            position: relative;
+            z-index: 1;
+        }
+        .movie-card-small .icon-wrapper i {
+            transition: all 0.3s ease;
+        }
+        .movie-card-small:hover .icon-wrapper i {
+            transform: scale(1.2);
+        }
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        .animate-float {
+            animation: float 3s ease-in-out infinite;
+        }
+        .animate-pulse-slow {
+            animation: pulse 3s ease-in-out infinite;
+        }
+        .movie-reel-ring {
+            border: 4px solid rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            position: absolute;
+        }
+        .movie-reel-ring-outer {
+            width: 280px;
+            height: 280px;
+            border-color: rgba(255, 255, 255, 0.3);
+        }
+        .movie-reel-ring-middle {
+            width: 200px;
+            height: 200px;
+            border-color: rgba(255, 255, 255, 0.2);
+        }
+        .movie-reel-ring-inner {
+            width: 120px;
+            height: 120px;
+            border-color: rgba(255, 255, 255, 0.1);
         }
         .search-input {
             transition: all 0.3s ease;
@@ -61,30 +259,11 @@
             color: white;
         }
         .search-input:focus {
-            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.3);
+            box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.3);
             background: rgba(255, 255, 255, 0.15);
         }
         .search-input::placeholder {
             color: rgba(255, 255, 255, 0.6);
-        }
-        .feature-card {
-            background: linear-gradient(145deg, #2d3748, #1a202c);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-        .feature-card:hover {
-            border-color: rgba(59, 130, 246, 0.5);
-            transform: translateY(-5px);
-        }
-        .section-bg {
-            background: linear-gradient(135deg, #2d3748 0%, #1a202c 100%);
-        }
-        .glow {
-            box-shadow: 0 0 15px rgba(59, 130, 246, 0.3);
-        }
-        .text-gradient {
-            background: linear-gradient(90deg, #60a5fa, #3b82f6);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
         }
     </style>
 </head>
@@ -153,7 +332,7 @@
                                class="search-input flex-1 px-6 py-3 rounded-full focus:outline-none"
                                placeholder="Enter a movie you like...">
                         <button type="submit" 
-                                class="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-full transition duration-300 flex items-center justify-center glow">
+                                class="btn-primary text-white px-8 py-3 rounded-full transition duration-300 flex items-center justify-center glow">
                             <i class="fas fa-search mr-2"></i>
                             Get Recommendations
                         </button>
@@ -162,14 +341,16 @@
                 <div class="md:w-1/2 mt-10 md:mt-0 animate-fade-in" style="animation-delay: 0.2s">
                     <div class="relative">
                         <!-- Movie Reel Animation -->
-                        <div class="absolute inset-0 flex items-center justify-center">
+                        <div class="movie-reel absolute inset-0 flex items-center justify-center animate-float">
                             <div class="w-64 h-64 relative">
                                 <!-- Outer Ring -->
-                                <div class="absolute inset-0 border-4 border-blue-500 rounded-full animate-spin-slow"></div>
+                                <div class="movie-reel-ring movie-reel-ring-outer animate-spin-slow"></div>
+                                <!-- Middle Ring -->
+                                <div class="movie-reel-ring movie-reel-ring-middle animate-spin-slow-reverse"></div>
                                 <!-- Inner Ring -->
-                                <div class="absolute inset-4 border-4 border-purple-500 rounded-full animate-spin-slow-reverse"></div>
+                                <div class="movie-reel-ring movie-reel-ring-inner animate-spin-slow"></div>
                                 <!-- Center Circle -->
-                                <div class="absolute inset-8 bg-gradient-to-br from-blue-600 to-purple-600 rounded-full flex items-center justify-center">
+                                <div class="absolute inset-8 bg-gradient-to-br from-indigo-600 to-purple-600 rounded-full flex items-center justify-center animate-pulse-slow">
                                     <i class="fas fa-film text-4xl text-white"></i>
                                 </div>
                             </div>
@@ -177,23 +358,31 @@
                         <!-- Movie Cards -->
                         <div class="relative z-10 grid grid-cols-2 gap-4 p-8">
                             <div class="movie-card-small transform rotate-6 hover:rotate-0 transition-all duration-300">
-                                <div class="bg-gradient-to-br from-blue-600 to-blue-800 rounded-lg p-4 h-48 flex items-center justify-center">
-                                    <i class="fas fa-star text-4xl text-yellow-400"></i>
+                                <div class="bg-gradient-to-br rounded-lg p-4 h-48 flex items-center justify-center">
+                                    <div class="icon-wrapper">
+                                        <i class="fas fa-star text-4xl text-yellow-400"></i>
+                                    </div>
                                 </div>
                             </div>
                             <div class="movie-card-small transform -rotate-6 hover:rotate-0 transition-all duration-300">
-                                <div class="bg-gradient-to-br from-purple-600 to-purple-800 rounded-lg p-4 h-48 flex items-center justify-center">
-                                    <i class="fas fa-heart text-4xl text-pink-400"></i>
+                                <div class="bg-gradient-to-br rounded-lg p-4 h-48 flex items-center justify-center">
+                                    <div class="icon-wrapper">
+                                        <i class="fas fa-heart text-4xl text-pink-400"></i>
+                                    </div>
                                 </div>
                             </div>
                             <div class="movie-card-small transform -rotate-3 hover:rotate-0 transition-all duration-300">
-                                <div class="bg-gradient-to-br from-pink-600 to-pink-800 rounded-lg p-4 h-48 flex items-center justify-center">
-                                    <i class="fas fa-ticket-alt text-4xl text-white"></i>
+                                <div class="bg-gradient-to-br rounded-lg p-4 h-48 flex items-center justify-center">
+                                    <div class="icon-wrapper">
+                                        <i class="fas fa-ticket-alt text-4xl text-white"></i>
+                                    </div>
                                 </div>
                             </div>
                             <div class="movie-card-small transform rotate-3 hover:rotate-0 transition-all duration-300">
-                                <div class="bg-gradient-to-br from-indigo-600 to-indigo-800 rounded-lg p-4 h-48 flex items-center justify-center">
-                                    <i class="fas fa-video text-4xl text-white"></i>
+                                <div class="bg-gradient-to-br rounded-lg p-4 h-48 flex items-center justify-center">
+                                    <div class="icon-wrapper">
+                                        <i class="fas fa-video text-4xl text-white"></i>
+                                    </div>
                                 </div>
                             </div>
                         </div>
